@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
-import Filter from "../components/Filter";
+import Filter from "../components/Filter/Filter";
 import * as filterActions from "../actions/filter";
 
 

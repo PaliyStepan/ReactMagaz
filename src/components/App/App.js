@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import  './App.sass';
+import './App.sass';
 import {Container, Card} from "semantic-ui-react";
-import Menu  from '../containers/Menu';
-import BookCard  from '../containers/Bookcard';
-import Filter  from '../containers/Filter';
+import Menu  from '../../containers/Menu';
+import BookCard  from '../../containers/Bookcard';
+import Filter  from '../../containers/Filter';
+import Main from "../Main/Main";
+import {Route, Switch} from "react-router-dom";
+import Cart from "../../containers/Cart";
 
 class App extends Component {
 
@@ -36,25 +39,18 @@ class App extends Component {
           <div className={this.state.scrolled ? 'App nav_fixed' : 'App'}>
               <Container>
                   <Menu></Menu>
-                  <Filter></Filter>
-                  <Card.Group  className="cards-wrap">
-                         {
-                             !isReady
-                             ? <p>Loading</p>
-                             : books.map( (book, index) => (
-                                 <BookCard
-                                    key={index}
-                                    {...book}
-                                 >
 
-                                 </BookCard>
-                             ))
-                         }
-                  </Card.Group>
+                 <Switch>
+                     <Route path='/' exact render={() =>  <Main isReady={isReady} books={books}/>} />
+                     <Route path='/cart' render={()=> <Cart/>}  />
+                 </Switch>
               </Container>
           </div>
       );
   }
 }
+
+
+
 
 export default App;

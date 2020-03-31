@@ -1,0 +1,51 @@
+.CartItem
+	margin-bottom: 20px
+
+.CartItem__grid
+	display: flex
+
+.CartItem__left
+	margin-right: 30px
+	img
+		height: auto
+		width: 120px
+
+.CartItem__right
+	position: relative
+	padding-right: 40px
+	width: 100%
+	h2
+		font-size: 20px
+		margin-bottom: 10px
+	h3
+		margin-top: 0
+		font-size: 18px
+		color: #aaaaaa
+		font-weight: normal
+	i
+		position: absolute
+		top: 0
+		right: 0
+		&:hover
+			color: red
+
+@media only screen and (max-width: 575px)
+	.CartItem__right
+		h2
+			font-size: 16px
+		h3
+			font-size: 14px
+	.CartItem__left
+		img
+			width: 100px
+
+
+@media only screen and (max-width: 375px)
+	.CartItem__right
+		h2
+			font-size: 14px
+		h3
+			font-size: 12px
+	.CartItem__left
+		img
+			width: 80px

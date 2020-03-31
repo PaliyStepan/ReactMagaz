@@ -1,6 +1,7 @@
 import React from "react";
-import {Menu, Popup, List, Button, Image} from "semantic-ui-react";
-import  "./Menu.sass";
+import {Menu, Popup, List, Button, Image, Icon} from "semantic-ui-react";
+import "./Menu.sass";
+import {Link, NavLink} from "react-router-dom";
 
 const CartComponent = ({title, id, image, removeFromCart }) => (
     <List  selection divided verticalAlign='middle'>
@@ -17,9 +18,9 @@ const CartComponent = ({title, id, image, removeFromCart }) => (
 
 const MenuComponent = ({totalPrice, count, items}) => (
     <Menu className="main-nav">
-        <a href="#" className="logo">
-            Магазин книг
-        </a>
+        <Link to={'/'}  className="logo">
+            <Icon name='home' size='large' />
+        </Link>
 
         <Menu.Menu position='right'>
             <Menu.Item className="main-nav__price">
@@ -32,11 +33,16 @@ const MenuComponent = ({totalPrice, count, items}) => (
                         Корзина (<b> {count}</b>)
                     </Menu.Item>
                 }
-                // content={    }
-                content={  items.length > 0 ? items.map(book => <CartComponent{...book} /> )  : <p>Корзина пуста </p>  }
+                content={  items.length > 0
+                    ?
+                    <div className="cart-inner">
+                        {items.map((book,i)=> <CartComponent key={i}{...book} /> )}
+                        <NavLink to={'/cart'} className="cart-inner__link">
+                            Перейти в корзину
+                        </NavLink>
+                    </div>
+                    : <p>Корзина пуста </p>  }
                 on="click"
-                hideOnScroll
-
             />
 
 

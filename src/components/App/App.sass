@@ -1,0 +1,40 @@
+.nav_fixed
+  .main-nav
+    position: fixed
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 100%
+    max-width: 1127px
+    z-index: 3
+    margin: 0 auto !important
+    border-top: none !important
+    box-shadow: none !important
+  .ui.container
+    padding-top: 60px
+
+
+@media only screen and (max-width: 1199px)
+  .nav_fixed
+    .main-nav
+      max-width: 933px
+
+@media only screen and (max-width: 991px)
+  .nav_fixed
+    .main-nav
+      max-width: 723px
+
+@media only screen and (max-width: 767px)
+  .nav_fixed
+    .main-nav
+      max-width: 96%
+
+@media only screen and (max-width: 575px)
+  .nav_fixed
+    .main-nav
+      max-width: 100%
+      -webkit-border-radius: 0 !important
+      -moz-border-radius: 0 !important
+      border-radius: 0 !important
+      border-left: 0 !important
+      border-right: 0 !important

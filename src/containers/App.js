@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import * as booksActions from "../actions/books";
 import {bindActionCreators} from "redux";
-import App from "../components/App";
+import App from "../components/App/App";
 import orderBy from "lodash/orderBy";
 
 const sortBy = (books, filterBy) =>{
