@@ -1,0 +1,71 @@
+.App
+  .cards-wrap
+    margin-top: 30px !important
+    .ui.card
+      width: calc(25% - 15px)
+    .date
+      color: rgba(0,0,0,.4)
+      font-size: 1em
+    .header
+      font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif
+      color: rgba(0,0,0,.85)
+      font-weight: 700
+      font-size: 1.28571429em
+      margin-top: -.21425em
+      line-height: 1.28571429em
+      margin-bottom: 8px
+    .extra.content
+      color: rgba(0,0,0,.4)
+      padding-top: 15px
+      padding-bottom: 15px
+      margin-top: auto
+    .content
+      padding: 0 15px
+
+
+
+.card-img
+  height: 300px
+  display: flex
+  align-items: center
+  justify-content: center
+  margin-bottom: 15px
+  img
+    width: auto
+    height: 250px
+
+.card-link
+  display: flex
+  flex-direction: column
+  height: 100%
+  &:hover
+    .header
+        text-decoration: underline
+
+
+@media only screen and (max-width: 1199px)
+  .App
+    .cards-wrap
+      .ui.card
+        width: calc(33% - 15px)
+
+@media only screen and (max-width: 991px)
+  .App
+    .cards-wrap
+      width: 90%
+      margin-left: auto !important
+      margin-right: auto !important
+      .ui.card
+        width: calc(50% - 15px)
+
+@media only screen and (max-width: 767px)
+  .App
+    .cards-wrap
+      width: 100%
+      justify-content: center
+      .ui.card
+        width: 90%
+  .card-img
+    height: 250px
+    img
+      height: 220px
