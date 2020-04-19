@@ -1,13 +1,14 @@
 import React from "react";
 import { Card, Icon, Image, Button } from 'semantic-ui-react';
 import "./Bookcard.sass"
+import {NavLink} from "react-router-dom";
 
 const BookCard = (book) => {
     const {title, author, price, image, addToCart, addedCount, id} = book;
-
+    // const cl = 'primary';
     return (
         <Card>
-            <a href={id} className="card-link">
+            <NavLink to={`/book/${id}`} className="card-link">
                 <div className="card-img">
                     <Image src={image}/>
                 </div>
@@ -25,9 +26,10 @@ const BookCard = (book) => {
                         <Icon name='rub' />
                         {price}
                 </Card.Content>
-            </a>
-            <Button onClick={addToCart.bind(this, book)}>
-                Добавить в корзину {addedCount > 0 && `(${addedCount} )`}
+            </NavLink>
+            {/*<Button onClick={addToCart.bind(this, book)} className={ addedCount > 0 && cl}>*/}
+            <Button onClick={addToCart.bind(this, book)} >
+                Добавить в корзину {addedCount > 0 && `(${addedCount} )`   }
             </Button>
         </Card>
     )

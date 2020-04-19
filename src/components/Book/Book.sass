@@ -1,0 +1,63 @@
+.Book
+	margin-top: 60px
+	margin-bottom: 50px
+
+.Book__grid
+	display: flex
+
+.Book__img
+	width: 30%
+	min-width: 30%
+	img
+		width: 100%
+		max-width: 90%
+
+.Book__info
+	h1
+		font-size: 43px
+		line-height: 45px
+	h2
+		margin-bottom: 40px
+
+
+.Book__buy
+	margin-top: 40px
+	p
+		font-size: 20px
+		font-weight: bold
+
+
+@media only screen and (max-width: 991px)
+	.Book__img
+		width: 35%
+		min-width: 35%
+	.Book__info
+		h1
+			font-size: 38px
+			line-height: 38px
+@media only screen and (max-width: 767px)
+	.Book__info
+		h1
+			font-size: 35px
+		h2
+			font-size: 20px
+			margin-bottom: 20px
+
+@media only screen and (max-width: 575px)
+	.Book__grid
+		flex-direction: column
+	.Book__img
+		width: 100%
+		min-width: 100%
+		margin-bottom: 30px
+		img
+			margin: 0 auto
+			display: block
+			max-height: 250px
+			width: auto
+	.Book__info
+		h1
+			font-size: 30px
+		h2
+			font-size: 20px
+			margin-bottom: 20px
