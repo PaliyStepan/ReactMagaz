@@ -6,11 +6,9 @@ import {Link, NavLink} from "react-router-dom";
 const CartComponent = ({title, id, image, removeFromCart }) => (
     <List  selection divided verticalAlign='middle'>
         <List.Item>
-            <List.Content floated='right'>
                 <Button color="red" onClick={removeFromCart.bind(this, id)}>Удалить</Button>
-            </List.Content>
             <Image avatar src={image} />
-            <List.Content>{title}</List.Content>
+            <p>{title}</p>
         </List.Item>
     </List>
 );
@@ -33,13 +31,18 @@ const MenuComponent = ({totalPrice, count, items}) => (
                         Корзина (<b> {count}</b>)
                     </Menu.Item>
                 }
-                content={  items.length > 0
+                content={
+                    items.length > 0
                     ?
                     <div className="cart-inner">
-                        {items.map((book,i)=> <CartComponent key={i}{...book} /> )}
-                        <NavLink to={'/cart'} className="cart-inner__link">
-                            Перейти в корзину
-                        </NavLink>
+                        {items.map((book,i)=>
+                            <CartComponent key={i}{...book} /> )}
+                        <div className="cart-inner__footer">
+                            <NavLink to={'/cart'} className="cart-inner__link">
+                                Перейти в корзину
+                            </NavLink>
+                        </div>
+
                     </div>
                     : <p>Корзина пуста </p>  }
                 on="click"

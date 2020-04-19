@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.sass';
-import {Container, Card} from "semantic-ui-react";
+import {Container} from "semantic-ui-react";
 import Menu  from '../../containers/Menu';
-import BookCard  from '../../containers/Bookcard';
-import Filter  from '../../containers/Filter';
+
 import Main from "../Main/Main";
 import {Route, Switch} from "react-router-dom";
 import Cart from "../../containers/Cart";
+import Book from "../../containers/Book";
 
 class App extends Component {
 
@@ -34,6 +34,7 @@ class App extends Component {
    }
 
     render() {
+
       const {books, isReady} = this.props;
       return (
           <div className={this.state.scrolled ? 'App nav_fixed' : 'App'}>
@@ -43,6 +44,7 @@ class App extends Component {
                  <Switch>
                      <Route path='/' exact render={() =>  <Main isReady={isReady} books={books}/>} />
                      <Route path='/cart' render={()=> <Cart/>}  />
+                     <Route path='/book/:id' render={()=> <Book isReady={isReady} books={books}/>}  />
                  </Switch>
               </Container>
           </div>

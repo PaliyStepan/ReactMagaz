@@ -3,7 +3,8 @@ import {NavLink} from "react-router-dom";
 import  "./Cart.sass";
 import CartItem from "./CartItem/CartItem";
 import { Icon } from 'semantic-ui-react';
-const Cart = ({items,clearCart}) => {
+const Cart = (props) => {
+    const {items,clearCart} = props;
     return(
         <div className='cart'>
             <NavLink to={'/'} icon="search">
